@@ -95,6 +95,10 @@ p{
     background-color: rgba(31, 30, 30, 0.24);
 }
 
+#header .header .brand{
+    z-index: 10;
+}
+
 #header .nav-bar{
     display: flex;
     align-items: center;
