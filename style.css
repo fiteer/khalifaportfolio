@@ -221,9 +221,8 @@ p{
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 50px;
-    justify-content: space-around;
+    justify-content: flex-start;
     text-align: left;
-    flex-direction: column;
 }
 
 
@@ -270,18 +269,6 @@ p{
 #hero a{
     font-size: 2.5rem;
     letter-spacing: .2rem;
-}
-#hero img{
-    width: 70%;
-    border-radius: 50%;
-    height: 262px;
-    animation: img 5s ease-in-out;
-    transition: all 1s ease-in-out;
-}
-
-#hero img:hover{
-    border: 10px solid crimson;
-    transition: all 1s ease-in-out;
 }
 
 @keyframes img{
@@ -476,12 +463,14 @@ p{
     margin: 20px auto;
     overflow: hidden;
     border-radius: 10px;
+    position: relative;
 }
 
 #projects .project-info{
     padding: 30px;
     flex-basis: 50%;
     height: 100%;
+    width: 100%;
     display: flex;
     align-items: flex-start;
     justify-content: center;
@@ -531,6 +520,63 @@ p{
     transform: scale(1.1);
 }
 
+#projects .project-item .info{
+    position: absolute;
+    width: 100%;
+    left: -100%;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-color: #000;
+    opacity: .7;
+    color: white;
+    z-index: 1000;
+}
+
+#projects .project-item .info .icons{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    
+}
+
+#projects .project-item .info .icons a img{
+    width: 60%;
+}
+#projects .project-item .info .icons img{
+    height: 63%;
+    margin: 15px;
+    width: 8%;
+    cursor: pointer;
+}
+#projects .project-item .info .icons span{
+    font-size: 46px;
+}
+
+#projects .project-item .info .cat{
+    font-size: 1.5rem;
+    padding: 15px 21px;
+}
+
+#projects .project-item:hover .info{
+    animation: info 1s ease-in-out forwards;
+    
+}
+@keyframes info{
+    0%{
+        left: -100%;
+    }
+    100%{
+        left: 0;
+    }
+}
+
+
 /* End Projects Section */
 
 /* Start Contact Section */
@@ -579,7 +625,7 @@ p{
 .contact-item .form-control{
     display: flex;
     flex-direction: column;
-    padding: 20px;
+    padding: 10px;
     text-align: left;
 }
 
@@ -588,16 +634,27 @@ p{
     margin-bottom: 10px;
 }
 
-#contact form input{
+#contact form :where(input, textarea){
     padding: 10px;
+    border: 1px solid #CCC;
+    outline: none;
 }
 #contact form textarea{
     height: 60px;
 }
+#contact form :where(input:focus, textarea:focus){
+    border-color: crimson;
+    box-shadow: 0 0 3px 1px rgba(220, 20, 60, 0.541);
+    transition: all .5s ease-in-out;
+}
+#contact form .cat{
+    margin-top: 0;
+    padding: 5px 5px;
+    width: 32%;
+}
 .contact-item img{
     padding: 24px;
     border-radius: 15%;
-    border: 1px solid #CCC;
 }
 /* End Contact Section */
 
@@ -690,18 +747,8 @@ p{
     h1.section-title{
         font-size: 6rem;
     }
-    /* Start Hero */
-    #hero .hero{
-        flex-direction: row;
-
-    }
     #hero h1{
         font-size: 6rem;
-    }
-    #hero img{
-        width: 26%;
-        border-radius: 50%;
-        height: 262px;
     }
     /* End Hero */
     /* Start About */
@@ -765,6 +812,7 @@ p{
         height: 100%;
         width: 50%;
     }
+    
     /* End Project */
     
     /* Start Contact */
@@ -784,6 +832,9 @@ p{
         flex-direction: row;
         justify-content: space-between;
         height: 400px;
+    }
+    .contact-item img{
+        width: 50%;
     }
     /* End Contact */
 }
