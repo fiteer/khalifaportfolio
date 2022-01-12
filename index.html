@@ -17,11 +17,11 @@
                 <div class="nav-list">
                     <div class="hamburger"><div class="bar"></div></div>
                     <ul>
-                        <li><a href="#hero">Home</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#projects">Projects</a></li>
-                        <li><a href="#contact" >Contact Me</a></li>
+                        <li><a href="#hero" data-after="Home">Home</a></li>
+                        <li><a href="#about" data-after="About">About Us</a></li>
+                        <li><a href="#services" data-after="Services">Services</a></li>
+                        <li><a href="#projects" data-after="Projects">Projects</a></li>
+                        <li><a href="#contact" data-after="Contact">Contact Me</a></li>
                     </ul>
                 </div>
             </div>
@@ -214,18 +214,21 @@
             <div class="contact-header"><h1 class="section-title"><span>Contact</span> Me</h1></div>
             <div class="contact-items">
                 <div class="contact-item">
-                    <form action="">
+                    <form  action="https://formspree.io/f/mqknekle" method="POST" id="form">
                         <div class="form-control">
-                            <label for="">Name</label>
-                            <input type="text" name="username" placeholder="Enter Your Name">
+                            <label for="username">Name</label>
+                            <input type="text" id="username" name="username" placeholder="Enter Your Name">
+                            <p>me</p>
                         </div>
                         <div class="form-control">
-                            <label for="">Email</label>
-                            <input type="email" name="email" placeholder="Enter Your Email">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="Enter Your Email">
+                            <p></p>
                         </div>
                         <div class="form-control">
-                            <label for="">message</label>
-                            <textarea name="message" placeholder="Enter Your Message"></textarea>
+                            <label for="message">message</label>
+                            <textarea name="message" id="message" placeholder="Enter Your Message"></textarea>
+                            <p></p>
                         </div>
                         <div class="form-control">
                             <button type="submit" class="cat">send</button>
@@ -263,5 +266,7 @@
         </div>
     </section>
     <!-- End Footer -->
+
+    <script src="js/app.js"></script>
 </body>
 </html>

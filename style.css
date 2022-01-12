@@ -3,6 +3,11 @@
     margin: 0;
     box-sizing: border-box;
 }
+
+:root{
+    --main-color: crimson;
+}
+
 html{
     font-size: 10px;
     font-family: Almarai;
@@ -30,7 +35,7 @@ a{
 }
 
 .section-title span{
-    color: crimson;
+    color: var(--main-color);
 }
 
 img{
@@ -49,9 +54,9 @@ p{
 .cat{
     display: inline-block;
     padding: 10px 30px;
-    color: crimson;
+    color: var(--main-color);
     font-size: 2rem;
-    border: 2px solid crimson;
+    border: 2px solid var(--main-color);
     text-transform: uppercase;
     background-color: transparent;
     letter-spacing: .1rem;
@@ -61,7 +66,7 @@ p{
 
 .cat:hover{
     color: white;
-    background-color: crimson;
+    background-color: var(--main-color);
 }
 
 .brand h1{
@@ -71,7 +76,7 @@ p{
 }
 
 .brand h1 span{
-    color: crimson;
+    color: var(--main-color);
 }
 
 /* Start Header */
@@ -116,6 +121,11 @@ p{
     overflow-x: hidden;
     transition: .4s ease left;
 }
+
+#header .nav-list ul.active{
+    left: 0;
+}
+
 #header .nav-list ul a{
     font-size: 2.5rem;
     font-weight: bold;
@@ -129,7 +139,25 @@ p{
 }
 
 #header .nav-list ul a:hover{
-    color: crimson;
+    color: var(--main-color);
+}
+
+#header .nav-list ul a::after{
+    content: attr(data-after);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    color: rgba(240, 248, 255, 0.157);
+    font-size: 7rem;
+    letter-spacing: 50px;
+    z-index: -1;
+    transition: .3s ease letter-spacing;
+}
+
+#header .nav-list ul li:hover a::after{
+    transform: translate(-50%, -50%) scale(1);
+    letter-spacing: initial;
 }
 
 #header .hamburger{
@@ -219,10 +247,8 @@ p{
 
 #hero .hero{
     max-width: 1200px;
-    margin: 0 auto;
     padding: 0 50px;
     justify-content: flex-start;
-    text-align: left;
 }
 
 
@@ -252,7 +278,7 @@ p{
     top: 0;
     width: 0;
     height: 100%;
-    background-color: crimson;
+    background-color: var(--main-color);
     animation: text_reveal_box 1s ease;
 }
 
@@ -288,7 +314,6 @@ p{
     flex-direction: column-reverse;
     text-align: center;
     max-width: 883px;
-    margin: 0 auto;
     padding: 100px 20px;
 }
 
@@ -296,12 +321,10 @@ p{
     width: 200px;
     margin-top: 30px;
     height: 300px;
-    background-color: black;
 }
 
 #about .col-left .about-img{
     height: 100%;
-    width: 100%;
     position: relative;
     border: 8px solid rgb(235, 233, 233);
 }
@@ -324,7 +347,7 @@ p{
     top: 15px;
     width: 97%;
     height: 100%;
-    border: 4px solid crimson;
+    border: 4px solid var(--main-color);
     z-index: -1;
 }
 
@@ -627,6 +650,7 @@ p{
     flex-direction: column;
     padding: 10px;
     text-align: left;
+    position: relative;
 }
 
 #contact form label{
@@ -636,14 +660,13 @@ p{
 
 #contact form :where(input, textarea){
     padding: 10px;
-    border: 1px solid #CCC;
     outline: none;
 }
 #contact form textarea{
     height: 60px;
 }
 #contact form :where(input:focus, textarea:focus){
-    border-color: crimson;
+    border-color: var(--main-color);
     box-shadow: 0 0 3px 1px rgba(220, 20, 60, 0.541);
     transition: all .5s ease-in-out;
 }
@@ -652,6 +675,7 @@ p{
     padding: 5px 5px;
     width: 32%;
 }
+
 .contact-item img{
     padding: 24px;
     border-radius: 15%;
@@ -730,7 +754,7 @@ p{
 }
 @keyframes text_reveal_name{
     100%{
-        color: crimson;
+        color: var(--main-color);
         font-weight: bold;
     }
 }
@@ -765,7 +789,7 @@ p{
         top: 34px;
         width: 98%;
         height: 98%;
-        border: 10px solid crimson;
+        border: 10px solid var(--main-color);
     }
     #about .col-right{
         text-align: left;
