@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -24,6 +25,8 @@
                         <li><a href="#contact" data-after="Contact">Contact Me</a></li>
                     </ul>
                 </div>
+                <i class='bx bx-toggle-left change-theme' id="theme-button"></i>
+
             </div>
         </div>
     </section>
@@ -46,8 +49,8 @@
     <section id="about">
         <div class="about container">
             <div class="col-left">
-                <div class="about-img">
-                    <img src="image/f.PNG" alt="">
+                <div class="about-img" id="hover">
+                    <img id="" src="image/f.PNG" alt="">
                 </div>
             </div>
             <div class="col-right">
@@ -213,15 +216,15 @@
         <div class="contact container">
             <div class="contact-header"><h1 class="section-title"><span>Contact</span> Me</h1></div>
             <div class="contact-items">
-                <div class="contact-item">
-                    <form  action="https://formspree.io/f/mqknekle" method="POST" id="form">
+                <div class="contact-item " id="map">
+                    <form id="form" action="" method="POST">
                         <div class="form-control">
-                            <label for="username">Name</label>
-                            <input type="text" id="username" name="username" placeholder="Enter Your Name">
-                            <p>me</p>
+                            <label for="">Name</label>
+                            <input type="text" id="name" name="username" placeholder="Enter Your Name">
+                            <p></p>
                         </div>
                         <div class="form-control">
-                            <label for="email">Email</label>
+                            <label for="">Email</label>
                             <input type="email" id="email" name="email" placeholder="Enter Your Email">
                             <p></p>
                         </div>
@@ -231,9 +234,11 @@
                             <p></p>
                         </div>
                         <div class="form-control">
-                            <button type="submit" class="cat">send</button>
+                            <button type="submit" id="my-form-button" class="cat">send</button>
                         </div>
-
+                        <div class="form-control">
+                            <p id="my-form-status"></p>
+                        </div>
                     </form>
                     <img src="image/site.PNG" alt="">
                 </div>

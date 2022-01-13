@@ -95,10 +95,6 @@ p{
     background-color: rgba(31, 30, 30, 0.24);
 }
 
-#header .header .brand{
-    z-index: 10;
-}
-
 #header .nav-bar{
     display: flex;
     align-items: center;
@@ -225,6 +221,25 @@ p{
     top: 0;
 }
 
+body.dark{
+    background-color: rgb(31, 30, 30) !important;
+    transition: all 1s ease-in-out;
+}
+
+.bx{
+    font-size: 29px;
+    color: white;
+    margin-right: 10px;
+    transition: all 1s ease-in-out;
+}
+body.dark :where(h1, h2, label){
+    color: white !important;
+}
+body.dark p{
+    color: rgb(133, 127, 127) !important;
+}
+
+
 /* End Header */
 
 /* Start hero section*/
@@ -332,7 +347,6 @@ p{
     position: relative;
     border: 8px solid rgb(235, 233, 233);
 }
-
 #about .col-left .about-img::before{
     content: '';
     position: absolute;
@@ -354,7 +368,9 @@ p{
     border: 4px solid var(--main-color);
     z-index: -1;
 }
-
+.about-img.img:hover{
+    transform: rotate(30deg);
+}
 #about .col-right{
     width: 100%;
 }
@@ -652,7 +668,7 @@ p{
 .contact-item .form-control{
     display: flex;
     flex-direction: column;
-    padding: 10px;
+    padding: 15px;
     text-align: left;
     position: relative;
 }
@@ -680,10 +696,33 @@ p{
     width: 32%;
 }
 
+form .form-control p{
+    visibility: hidden;
+    position: absolute;
+    top: 90%;
+    left: 8%;
+    color: #eb7f1a;
+}
+
+form .form-control.success{
+    border-color: #2ecc2e;
+}
+form .form-control.success input{
+    border-color: #2ecc2e;
+}
+form .form-control.error input{
+    border-color: #eb7f1a;
+}
+form .form-control.error p{
+    visibility: visible;
+    
+}
+
 .contact-item img{
     padding: 24px;
     border-radius: 15%;
 }
+
 /* End Contact Section */
 
 /* Start Footer */
@@ -859,7 +898,7 @@ p{
         width: 100%;
         flex-direction: row;
         justify-content: space-between;
-        height: 400px;
+        height: 430px;
     }
     .contact-item img{
         width: 50%;
